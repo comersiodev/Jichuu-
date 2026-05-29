@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0, user-scalable=yes">
+<title>Home</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="home">
+
+  <img src="Birthday.png" class="home-img">
+
+  <h1 class="home-title">Monokrom</h1>
+
+  <p class="home-text">
+    Kita pernah berjalan bersama,  
+    dalam tawa yang sederhana.
+    And, yaa.... semoga suka😹
+  </p>
+
+  <div class="home-menu">
+    <a href="gallery.html">Gallery</a>
+    <a href="birthday.html">Birthday</a>
+  </div>
+
+</div>
+
+<audio id="audio" src="Monokrom.mp3" loop></audio>
+
+<script>
+const audio = document.getElementById("audio");
+
+// auto play (butuh interaksi dikit)
+document.addEventListener("click", () => {
+  audio.volume = 0.7;
+  audio.play();
+}, { once: true });
+</script>
+
+</body>
+</html>
