@@ -70,7 +70,7 @@ preview.addEventListener("click", () => {
 // =======================
 const song = {
   title: "Perfect",
-  artist: "Ed Sheeran, cover Version"
+  artist: "Ed Sheeran"
 };
 
 document.getElementById("songTitle").innerText = song.title;
@@ -87,15 +87,15 @@ const lyricsData = [
   { time: 4, text: "Not knowin' what it was" },
   { time: 8, text: "I will not give you up this time" },
 
-  { time: 18, text: "Oh, darling, just kiss me slow" },
-  { time: 20, text: "Your heart is all I own" },
-  { time: 24, text: "And in your eyes, you're holding mine" },
+  { time: 15, text: "Oh, darling, just kiss me slow" },
+  { time: 19, text: "Your heart is all I own" },
+  { time: 23, text: "And in your eyes, you're holding mine" },
 
-  { time: 33, text: "Baby, I'm dancin' in the dark with you between my arms" },
-  { time: 44, text: "Barefoot on the grass while listenin' to our favourite song" },
+  { time: 30, text: "Baby, I'm dancin' in the dark with you between my arms" },
+  { time: 40, text: "Barefoot on the grass while listenin' to our favourite song" },
 
-  { time: 51, text: "When you said you looked a mess, I whispered underneath my breath" },
-  { time: 59, text: 'But you heard it, "Darling, you look perfect tonight"' }
+  { time: 49, text: "When you said you looked a mess, I whispered underneath my breath" },
+  { time: 56, text: 'But you heard it, "Darling, you look perfect tonight"' }
 ];
 
 audio.addEventListener("timeupdate", () => {
