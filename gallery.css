@@ -1,6 +1,6 @@
 /* ================= TOP BAR ================= */
 .top-bar {
-background:#2a2a2f;
+background:rgba(42,42,47,0.75);
 margin:20px;
 padding:15px;
 border-radius:25px;
@@ -8,6 +8,9 @@ border-radius:25px;
 display:flex;
 align-items:center;
 justify-content:space-between;
+
+backdrop-filter:blur(12px);
+-webkit-backdrop-filter:blur(12px);
 }
 
 /* gambar */
@@ -16,7 +19,10 @@ width:70px;
 height:70px;
 border-radius:20px;
 overflow:hidden;
-background:#141416;
+background:rgba(20,20,22,0.85);
+
+backdrop-filter:blur(12px);
+-webkit-backdrop-filter:blur(12px);
 }
 
 .top-img img {
@@ -33,74 +39,93 @@ gap:10px;
 
 /* tombol */
 .menu-btn {
-background:#141416;
+background:rgba(20,20,22,0.85);
 padding:10px 15px;
 border-radius:15px;
 text-decoration:none;
 color:white;
 font-size:14px;
+
+backdrop-filter:blur(12px);
+-webkit-backdrop-filter:blur(12px);
 }
 
 /* =======================
 🎯 FONT
 ======================= */
 @font-face {
-font-family: 'Primetime';
-src: url('Primetime.ttf') format('truetype');
+font-family:'Primetime';
+src:url('Primetime.ttf') format('truetype');
 }
 
 @font-face {
-font-family: 'VanillaTwilight';
-src: url('Vanilla Twilight.otf') format('opentype');
+font-family:'VanillaTwilight';
+src:url('Vanilla Twilight.otf') format('opentype');
 }
 
 /* =======================
 🌐 BASE
 ======================= */
-body {
+body{
 margin:0;
-font-family: 'VanillaTwilight', Arial;
-background:#1c1c1f;
+font-family:'VanillaTwilight', Arial;
 color:#fff;
 text-align:center;
 user-select:none;
-touch-action: manipulation;
+touch-action:manipulation;
+
+background:
+linear-gradient(
+rgba(0,0,0,0.70),
+rgba(0,0,0,0.70)
+),
+url("Background.gif");
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+background-attachment:fixed;
+
+background-color:#1c1c1f;
 }
 
 /* =======================
 🧠 HEADER
 ======================= */
-.header {
+.header{
 display:flex;
 justify-content:center;
 margin-top:20px;
 }
 
-.header img {
+.header img{
 width:200px;
 max-width:80%;
 height:auto;
 object-fit:contain;
-filter: drop-shadow(0 5px 10px rgba(0,0,0,0.4));
+filter:drop-shadow(0 5px 10px rgba(0,0,0,0.4));
 }
 
 /* =======================
 📦 CONTAINER
 ======================= */
-.container {
-background:#2a2a2f;
+.container{
+background:rgba(42,42,47,0.75);
 margin:20px;
 padding:20px;
 border-radius:30px;
 display:flex;
 flex-direction:column;
 gap:15px;
+
+backdrop-filter:blur(12px);
+-webkit-backdrop-filter:blur(12px);
 }
 
 /* =======================
 🎞 SLIDER
 ======================= */
-.slider {
+.slider{
 display:flex;
 gap:12px;
 overflow-x:auto;
@@ -121,73 +146,87 @@ height:150px;
 /* =======================
 🖼 CARD
 ======================= */
-.card {
+.card{
 min-width:150px;
 height:150px;
-background:#141416;
+
+background:rgba(20,20,22,0.75);
+
 border-radius:20px;
 overflow:hidden;
 position:relative;
 flex-shrink:0;
+
 box-shadow:0 10px 20px rgba(0,0,0,0.35);
+
+backdrop-filter:blur(12px);
+-webkit-backdrop-filter:blur(12px);
 }
 
-.card.large {
+.card.large{
 min-width:260px;
 height:160px;
 }
 
-.card img {
+.card img{
 width:100%;
 height:100%;
 object-fit:cover;
 pointer-events:none;
 }
 
-.card span {
+.card span{
 position:absolute;
 bottom:0;
 left:0;
 width:100%;
+
 background:rgba(0,0,0,0.65);
+
 padding:10px;
 font-size:14px;
 font-weight:bold;
+
 backdrop-filter:blur(5px);
 }
 
 /* =======================
 🎵 MUSIC
 ======================= */
-.music-box {
+.music-box{
 display:flex;
 gap:15px;
 align-items:center;
 margin-bottom:20px;
 }
 
-.album img {
+.album img{
 width:120px;
 height:120px;
 border-radius:20px;
 object-fit:cover;
 }
 
-.song-info {
+.song-info{
 flex:1;
-background:#141416;
+
+background:rgba(20,20,22,0.75);
+
 padding:15px;
 border-radius:20px;
 text-align:left;
+
+backdrop-filter:blur(12px);
+-webkit-backdrop-filter:blur(12px);
 }
 
-#songTitle {
+#songTitle{
 font-family:'Primetime';
 font-size:20px;
 margin:0;
 }
 
-#artistName {
+#artistName{
 font-size:14px;
 opacity:0.8;
 }
@@ -195,25 +234,31 @@ opacity:0.8;
 /* =======================
 🎤 LYRICS
 ======================= */
-#lyricsBox {
+#lyricsBox{
 font-family:'VanillaTwilight' !important;
 }
 
-.lyrics {
-background:#141416;
+.lyrics{
+background:rgba(20,20,22,0.75);
+
 padding:20px;
 border-radius:20px;
+
 font-size:15px;
 line-height:1.6;
+
 max-height:160px;
 overflow-y:auto;
 text-align:center;
+
+backdrop-filter:blur(12px);
+-webkit-backdrop-filter:blur(12px);
 }
 
 /* =======================
 🔍 PREVIEW
 ======================= */
-#preview {
+#preview{
 position:fixed;
 top:0;
 left:0;
@@ -226,7 +271,7 @@ background:rgba(0,0,0,0.92);
 z-index:999;
 }
 
-#preview img {
+#preview img{
 max-width:90%;
 max-height:90%;
 border-radius:20px;
@@ -239,6 +284,6 @@ border-radius:20px;
 .song-info,
 .lyrics,
 .card,
-.album-box {
+.album-box{
 border:1.5px solid rgba(255,255,255,0.08);
 }

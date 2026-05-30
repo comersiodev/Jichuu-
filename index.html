@@ -1,43 +1,51 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0, user-scalable=yes">
-<title>Home</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<div class="home">
-
-  <img src="Birthday.png" class="home-img">
-
-  <h1 class="home-title">Monokrom</h1>
-
-  <p class="home-text">
-    Kita pernah berjalan bersama,  
-    dalam tawa yang sederhana.
-    And, yaa.... semoga suka😹
-  </p>
-
-  <div class="home-menu">
-    <a href="gallery.html">Gallery</a>
-    <a href="birthday.html">Birthday</a>
-  </div>
-
+<!DOCTYPE html><html lang="id"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0, user-scalable=yes">  <title>Monokrom</title>  <link rel="stylesheet" href="style.css">
+</head><body>  <!-- NAVBAR -->  <div class="top-bar"><div class="top-img" onclick="toggleMenu()">
+  <img src="Winter.jpg" alt="Profile">
 </div>
 
-<audio id="audio" src="Monokrom.mp3" loop></audio>
+<div class="top-menu" id="menu">
+  <a href="gallery.html" class="menu-btn">Gallery</a>
+  <a href="birthday.html" class="menu-btn">Wishlist</a>
+</div>
 
-<script>
-const audio = document.getElementById("audio");
+  </div>  <!-- HOME -->  <div class="home"><div class="home-img">
+  <img src="2.gif" alt="Monokrom">
+</div>
 
-// auto play (butuh interaksi dikit)
-document.addEventListener("click", () => {
-  audio.volume = 0.7;
-  audio.play();
-}, { once: true });
-</script>
+<h1 class="home-title">Jichuu</h1>
 
-</body>
-</html>
+<p class="home-text">
+  Kita pernah berjalan bersama,
+  dalam tawa yang sederhana.
+  <br><br>
+  And, yaa.... semoga suka 😹
+</p>
+
+  </div>  <!-- AUDIO --><audio id="audio" src="Monokrom.mp3" loop></audio>
+
+  <script>
+
+    function toggleMenu() {
+
+      const menu = document.getElementById("menu");
+      const logo = document.querySelector(".top-img");
+
+      menu.classList.toggle("active");
+
+      logo.classList.remove("spin");
+      void logo.offsetWidth;
+      logo.classList.add("spin");
+
+    }
+
+    const audio = document.getElementById("audio");
+
+    document.addEventListener("click", () => {
+      audio.volume = 0.7;
+      audio.play();
+    }, { once: true });
+
+  </script></body></html>

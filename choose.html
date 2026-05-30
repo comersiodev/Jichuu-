@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="
+width=device-width,
+initial-scale=1.0,
+maximum-scale=1.0,
+user-scalable=no
+">
+
+<title>Select Ur Arc</title>
+
+<link rel="stylesheet" href="choose.css">
+
+</head>
+<body>
+
+<div class="container">
+
+  <div class="titleBubble">
+    Select ur Arc
+  </div>
+
+  <div class="arcWrapper">
+
+    <!-- ARC 1 -->
+    <a href="arc1.html" class="arcCard">
+
+      <img
+      src="2.gif"
+      class="arcImage"
+      alt="Jichuu Arc 1">
+
+      <div class="arcName">
+        Jichuu Arc 1
+      </div>
+
+    </a>
+
+    <!-- ARC 2 -->
+    <a href="arc2.html" class="arcCard">
+
+      <img
+      src="4.gif"
+      class="arcImage"
+      alt="Jichuu Arc 2">
+
+      <div class="arcName">
+        Jichuu Arc 2
+      </div>
+
+    </a>
+
+    <!-- ARC 3 -->
+    <a href="arc3.html" class="arcCard">
+
+      <img
+      src="27.gif"
+      class="arcImage"
+      alt="Jichuu Arc 3">
+
+      <div class="arcName">
+        Jichuu Arc 3
+      </div>
+
+    </a>
+
+  </div>
+
+</div>
+
+<audio id="selectSound" src="Select.mp3"></audio>
+
+<div id="arcPopup" class="popup">
+
+<div class="popupBox">
+
+<h2 id="popupTitle"></h2>
+
+<button id="startBtn">
+START
+</button>
+
+<button id="cancelBtn">
+CANCEL
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+const selectSound =
+document.getElementById("selectSound");
+
+const popup =
+document.getElementById("arcPopup");
+
+const popupTitle =
+document.getElementById("popupTitle");
+
+const startBtn =
+document.getElementById("startBtn");
+
+const cancelBtn =
+document.getElementById("cancelBtn");
+
+let selectedPage = "";
+
+document
+.querySelectorAll(".arcCard")
+.forEach(card=>{
+
+card.addEventListener("click",(e)=>{
+
+e.preventDefault();
+
+selectSound.currentTime = 0;
+selectSound.play();
+
+selectedPage = card.href;
+
+popupTitle.innerText =
+card.querySelector(".arcName").innerText;
+
+popup.classList.add("show");
+
+});
+
+});
+
+startBtn.onclick = ()=>{
+
+window.location.href =
+selectedPage;
+
+};
+
+cancelBtn.onclick = ()=>{
+
+popup.classList.remove("show");
+
+};
+
+</script>
+</html>

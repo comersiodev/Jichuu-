@@ -1,76 +1,250 @@
-/* ================= TOP BAR ================= */
-.top-bar {
-background:#2a2a2f;
-margin:20px;
-padding:15px;
-border-radius:25px;
-
-display:flex;
-align-items:center;
-justify-content:space-between;
+/* =======================
+🎯 FONT
+======================= */
+@font-face{
+font-family:'Primetime';
+src:url('Primetime.ttf');
 }
 
-/* gambar */
-.top-img {
+@font-face{
+font-family:'VanillaTwilight';
+src:url('Vanilla Twilight.otf');
+}
+
+/* =======================
+🌐 BASE
+======================= */
+body{
+margin:0;
+font-family:'VanillaTwilight';
+color:#fff;
+text-align:center;
+
+background:
+linear-gradient(
+rgba(0,0,0,.70),
+rgba(0,0,0,.70)
+),
+url("Background.gif");
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+background-attachment:fixed;
+
+background-color:#1c1c1f;
+}
+
+/* =======================
+🧭 FLOATING NAVBAR
+======================= */
+.top-bar{
+position:fixed;
+left:-40px;
+top:50%;
+transform:translateY(-50%);
+z-index:999;
+}
+
+/* LOGO */
+.top-img{
 width:70px;
 height:70px;
-border-radius:20px;
+
+border-radius:50%;
 overflow:hidden;
+
+cursor:pointer;
+
 background:#141416;
+
+border:2px solid rgba(255,255,255,.08);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+animation:pulse 2s ease-in-out infinite;
 }
 
-.top-img img {
+.top-img img{
 width:100%;
 height:100%;
 object-fit:cover;
 }
 
-/* menu */
-.top-menu {
-display:flex;
-gap:10px;
+/* SPIN */
+.top-img.spin{
+animation:
+pulse 2s ease-in-out infinite,
+spin .8s linear;
 }
 
-/* tombol */
-.menu-btn {
-background:#141416;
-padding:10px 15px;
-border-radius:15px;
+/* MENU */
+.top-menu{
+position:absolute;
+
+left:85px;
+top:50%;
+
+display:flex;
+flex-direction:column;
+gap:12px;
+
+opacity:0;
+pointer-events:none;
+
+transform:
+translateY(-50%)
+translateX(-20px)
+scale(.8);
+
+transition:
+opacity .3s ease,
+transform .3s ease;
+}
+
+.top-menu.active{
+opacity:1;
+pointer-events:auto;
+
+transform:
+translateY(-50%)
+translateX(0)
+scale(1);
+}
+
+/* BUTTON */
+.menu-btn{
+background:rgba(20,20,22,.90);
+
+padding:12px 18px;
+
+border-radius:999px;
+
 text-decoration:none;
 color:white;
-font-size:14px;
+
+white-space:nowrap;
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(10px);
+-webkit-backdrop-filter:blur(10px);
+
+transition:.25s;
 }
 
-/* ================= FONT ================= */
-@font-face {
-font-family: 'Primetime';
-src: url('Primetime.ttf');
+.menu-btn:hover{
+transform:translateX(5px);
 }
 
-@font-face {
-font-family: 'VanillaTwilight';
-src: url('Vanilla Twilight.otf');
+/* ANIMATION */
+@keyframes spin{
+
+from{
+transform:rotate(0deg);
 }
 
-/* ================= BASE ================= */
-body {
-margin:0;
-font-family:'VanillaTwilight';
-background:#1c1c1f;
-color:#fff;
-text-align:center;
+to{
+transform:rotate(360deg);
 }
 
-/* ================= TITLE ================= */
-.title {
+}
+
+@keyframes pulse{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.15);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+/* =======================
+🏷 TITLE
+======================= */
+.title{
 font-family:'Primetime';
 font-size:42px;
 margin-top:20px;
 }
 
-.subtitle {
+.subtitle{
 margin-top:-10px;
-opacity:0.7;
+opacity:.7;
+}
+
+/* =======================
+📦 CONTAINER
+======================= */
+.container{
+background:rgba(42,42,47,.75);
+
+margin:20px;
+padding:20px;
+
+border-radius:30px;
+
+display:flex;
+flex-direction:column;
+gap:20px;
+
+backdrop-filter:blur(12px);
+-webkit-backdrop-filter:blur(12px);
+}
+
+/* =======================
+💿 ALBUM
+======================= */
+.album-box{
+width:150px;
+height:150px;
+
+margin:0 auto;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+overflow:hidden;
+
+border-radius:20px;
+
+background:rgba(20,20,22,.75);
+
+backdrop-filter:blur(12px);
+-webkit-backdrop-filter:blur(12px);
+}
+
+.album-box img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* =======================
+💌 UCAPAN
+======================= */
+.ucapan-box{
+background:rgba(20,20,22,.75);
+
+border-radius:25px;
+
+padding:40px 20px;
+
+font-size:18px;
+line-height:1.7;
+
+backdrop-filter:blur(12px);
+-webkit-backdrop-filter:blur(12px);
 }
 
 .ucapan-box p{
@@ -78,102 +252,95 @@ margin-bottom:16px;
 line-height:1.8;
 }
 
-/* ================= CONTAINER ================= */
-.container {
-background:#2a2a2f;
-margin:20px;
-padding:20px;
-border-radius:30px;
-display:flex;
-flex-direction:column;
-gap:20px;
-}
-
-/* ================= ALBUM ================= */
-.album-box {
-width:150px;
-height:150px;
-background:#141416;
-border-radius:20px;
-margin:0 auto;
-display:flex;
-justify-content:center;
-align-items:center;
-overflow:hidden;
-}
-
-.album-box img {
+/* =======================
+📝 INPUT
+======================= */
+.input-box{
 width:100%;
-height:100%;
-object-fit:cover;
-}
 
-/* ================= UCAPAN ================= */
-.ucapan-box {
-background:#141416;
-border-radius:25px;
-padding:40px 20px;
-font-size:18px;
-line-height:1.7;
-}
-
-/* ================= INPUT ================= */
-.input-box {
-background:#141416;
-border:none;
-border-radius:20px;
 padding:15px;
-color:white;
-font-family:'VanillaTwilight';
+
+border:none;
 outline:none;
-width:100%;
+
+border-radius:20px;
+
+color:white;
+
+font-family:'VanillaTwilight';
+
+background:rgba(20,20,22,.75);
+
+backdrop-filter:blur(12px);
+-webkit-backdrop-filter:blur(12px);
 }
 
-textarea.input-box {
+textarea.input-box{
 min-height:80px;
 resize:none;
 }
 
-.input-box::placeholder {
-color:rgba(255,255,255,0.5);
+.input-box::placeholder{
+color:rgba(255,255,255,.5);
 }
 
-/* ================= BUTTON ================= */
-button {
+/* =======================
+🔘 BUTTON
+======================= */
+button{
 margin-top:10px;
+
 padding:12px;
+
 border:none;
-border-radius:15px;
-background:#141416;
-color:white;
-font-family:'VanillaTwilight';
 cursor:pointer;
+
+border-radius:15px;
+
+color:white;
+
+font-family:'VanillaTwilight';
+
+background:rgba(20,20,22,.85);
+
+backdrop-filter:blur(12px);
+-webkit-backdrop-filter:blur(12px);
 }
 
-/* ================= RESULT ================= */
-.result-box {
-background:#141416;
-padding:20px;
-border-radius:20px;
+/* =======================
+📄 RESULT
+======================= */
+.result-box{
 text-align:left;
+
+padding:20px;
+
+border-radius:20px;
+
+background:rgba(20,20,22,.75);
+
+backdrop-filter:blur(12px);
+-webkit-backdrop-filter:blur(12px);
 }
 
-/* ================= LABEL ================= */
-.label {
+/* =======================
+🏷 LABEL
+======================= */
+.label{
 text-align:left;
 font-size:16px;
-opacity:0.9;
+opacity:.9;
 }
 
-.card {
-border:1px solid rgba(255,255,255,0.08);
-}
-
-/* ================= BORDER CLEAN ================= */
+/* =======================
+🖤 BORDER CLEAN
+======================= */
 .container,
 .home,
 .top-bar,
 .card,
-.album-box {
-border:1.5px solid rgba(255,255,255,0.08);
+.album-box,
+.ucapan-box,
+.result-box{
+border:1.5px solid rgba(255,255,255,.08);
 }

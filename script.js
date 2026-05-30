@@ -117,3 +117,25 @@ audio.addEventListener("timeupdate", () => {
 // 🚫 ANTI DOWNLOAD BASIC
 // =======================
 document.addEventListener("contextmenu", e => e.preventDefault());
+
+function toggleMenu(){
+
+const menu =
+document.getElementById("menu");
+
+const logo =
+document.querySelector(".top-img");
+
+menu.classList.toggle("active");
+
+logo.classList.remove("spin");
+
+void logo.offsetWidth;
+
+logo.classList.add("spin");
+
+}
+
+function toggleMenu(){
+  alert("kepencet");
+}
